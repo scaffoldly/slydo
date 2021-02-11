@@ -46,7 +46,7 @@
   },
   "release": {
     "extends": "semantic-release-npm-github",
-    "branches": "main"
+    "branches": "master"
   },
   "files": [
     "index.js",
