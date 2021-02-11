@@ -1,0 +1,55 @@
+{
+  "name": "slydo",
+  "version": "0.0.1",
+  "description": "Scaffoldly CLI (slydo)",
+  "repository": "scaffoldly/slydo",
+  "main": "index.js",
+  "bin": {
+    "slydo": "./bin/slydo"
+  },
+  "scripts": {
+    "lint": "xo \"*.js\" \"bin/*.js\"",
+    "lint:fix": "npm run lint -s -- --fix",
+    "test": "npm run lint -s",
+    "release:check": "semantic-release --dry-run"
+  },
+  "keywords": [
+    "scaffoldly",
+    "slydo"
+  ],
+  "author": {
+    "name": "Scaffoldly",
+    "url": "https://github.com/scaffoldly"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/scaffoldly/slydo",
+  "bugs": {
+    "url": "https://github.com/scaffoldly/slydo/issues"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "semantic-release-npm-github": "^1.0.4",
+    "xo": "^0.37.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "rules": {
+      "unicorn/no-array-reduce": "off"
+    }
+  },
+  "release": {
+    "extends": "semantic-release-npm-github",
+    "branches": "main"
+  },
+  "files": [
+    "index.js",
+    "bin"
+  ]
+}

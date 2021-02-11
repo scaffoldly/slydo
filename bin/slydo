@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+const SlydoCli = require("../index");
+const cli = new SlydoCli(process.argv.slice(2));
+cli.run();
