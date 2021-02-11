@@ -1,26 +1,26 @@
-const minimist = require("minimist");
+const minimist = require('minimist');
 
-const path = require("path");
-const chalk = require("chalk");
+const path = require('path');
+const chalk = require('chalk');
 
 const appName = path.basename(process.argv[1]);
-const help = `${chalk.bold("Usage")} ${appName} ${chalk.blue(
-  "[command]"
+const help = `${chalk.bold('Usage')} ${appName} ${chalk.blue(
+  '[command]'
 )} [options]\n`;
 const detailedHelp = `
-${chalk.blue("--help")}
-  Shows ${chalk.cyan("this help")}
+${chalk.blue('--help')}
+  Shows ${chalk.cyan('this help')}
 `;
 
 class SlydoCli {
   constructor(args) {
     this._args = args;
     this._options = minimist(args, {
-      boolean: ["help"],
+      boolean: ['help'],
       string: [],
       alias: {},
       default: {},
-      "--": true,
+      '--': true
     });
   }
 
@@ -40,7 +40,7 @@ class SlydoCli {
       help +
         (details
           ? detailedHelp
-          : `Use ${chalk.white("--help")} for more info.\n`)
+          : `Use ${chalk.white('--help')} for more info.\n`)
     );
   }
 
