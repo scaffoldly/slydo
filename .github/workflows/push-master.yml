@@ -1,8 +1,8 @@
-name: Commit to Master
+name: Commit to Main
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   bump-version:
     runs-on: ubuntu-latest
