@@ -22,14 +22,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node }}-yarn-
-      - uses: actions/cache@v2
-        with:
-          path: ./api
-          key: ${{ runner.os }}-${{ matrix.node }}-openapi-${{ hashFiles('./.openapis') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node }}-openapi-
       - run: yarn
-      - run: yarn openapi
       - run: yarn build
       - if: ${{ matrix.node == '14' }}
         uses: scaffoldly/bump-version-action@v1
