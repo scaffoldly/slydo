@@ -1,6 +1,6 @@
 {
   "name": "slydo",
-  "version": "0.1.2-0",
+  "version": "0.1.2",
   "description": "Scaffoldly Command Line Interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
