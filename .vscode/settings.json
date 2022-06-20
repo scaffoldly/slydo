@@ -3,5 +3,6 @@
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.rulers": [100],
-  "git.autofetch": true
+  "git.autofetch": true,
+  "typescript.preferences.importModuleSpecifier": "relative"
 }

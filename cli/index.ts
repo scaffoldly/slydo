@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { serverlessExec } from 'src';
+import { serverlessExec } from '../src';
 
 export class Command {
   private argv: string[];

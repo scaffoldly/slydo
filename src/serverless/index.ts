@@ -1,4 +1,4 @@
-import { exec } from 'src/exec';
+import { exec } from '../exec';
 
 export const serverlessExec = async (argv: string[]): Promise<number> => {
   //TODO: Locate serverless binary
