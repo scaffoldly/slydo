@@ -1,0 +1,27 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    /* Basic Options */
+    "incremental": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "build/",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["dist/**/*", "build/**/*"]
+}

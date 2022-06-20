@@ -1,55 +1,77 @@
 {
   "name": "slydo",
-  "version": "0.0.1",
-  "description": "Scaffoldly CLI (slydo)",
-  "repository": "scaffoldly/slydo",
-  "main": "index.js",
-  "bin": {
-    "slydo": "./bin/slydo"
+  "version": "0.1.0",
+  "description": "Scaffoldly Command Line Interface",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/scaffoldly/slydo#readme",
+  "repository": {
+    "url": "https://github.com/scaffoldly/slydo"
   },
-  "scripts": {
-    "lint": "xo \"*.js\" \"bin/*.js\"",
-    "lint:fix": "npm run lint -s -- --fix",
-    "test": "npm run lint -s",
-    "release:check": "semantic-release --dry-run"
-  },
-  "keywords": [
-    "scaffoldly",
-    "slydo"
-  ],
-  "author": {
-    "name": "Scaffoldly",
-    "url": "https://github.com/scaffoldly"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/scaffoldly/slydo",
   "bugs": {
     "url": "https://github.com/scaffoldly/slydo/issues"
   },
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "minimist": "^1.2.5"
+  "author": "Scaffoldly",
+  "license": "MPL-2.0",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "webpack",
+    "start": "node --trace-warnings -r ts-node/register -r tsconfig-paths/register cli/index.ts",
+    "check-lint": "eslint .",
+    "lint": "eslint . --fix",
+    "check-format": "prettier --check .",
+    "format": "prettier --write ."
   },
-  "devDependencies": {
-    "semantic-release-npm-github": "^1.0.4",
-    "xo": "^0.37.1"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "xo": {
-    "space": true,
-    "prettier": true,
-    "rules": {
-      "unicorn/no-array-reduce": "off"
-    }
-  },
-  "release": {
-    "extends": "semantic-release-npm-github",
-    "branches": "master"
+  "bin": {
+    "slydo": "dist/main.js"
   },
   "files": [
-    "index.js",
-    "bin"
-  ]
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.1",
+    "tsconfig-paths": "^4.0.0",
+    "typescript": "^4.7.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": 1
+    },
+    "ignorePatterns": [
+      "build",
+      "dist",
+      "node_modules",
+      "yarn.lock"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 2
+  }
 }
