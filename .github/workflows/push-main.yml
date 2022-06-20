@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['12', '14', '16']
+        node: ['14', '16']
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
@@ -22,12 +22,6 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node }}-yarn-
-      - uses: actions/cache@v2
-        with:
-          path: ./api
-          key: ${{ runner.os }}-${{ matrix.node }}-openapi-${{ hashFiles('./.openapis') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node }}-openapi-
       - run: yarn
       - run: yarn build
       - if: ${{ matrix.node == '14' }}
